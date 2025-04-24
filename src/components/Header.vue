@@ -46,8 +46,9 @@
     </v-btn>
 
     <v-btn color="lime-darken-2" class="ml-2 px-4" rounded>
-      Add Listing
-    </v-btn>
+        <v-icon>mdi-plus</v-icon>
+        <span class="ml-2">Add Listing</span>
+        </v-btn>
 
     <!-- User Menu -->
     <v-menu>
