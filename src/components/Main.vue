@@ -11,7 +11,10 @@
           lg="3"
         >
           <v-card class="item-card">
-            <v-img :src="item.image" height="200px" class="item-image"></v-img>
+            <div class="image-container">
+              <v-img :src="item.image" height="200px" class="item-image"></v-img>
+              <div v-if="item.isOnline" class="online-badge">Online</div>
+            </div>
             <v-card-title>{{ item.name }}</v-card-title>
             <v-card-subtitle>
               <div>{{ item.datePosted }}</div>
@@ -48,6 +51,7 @@ const loadItems = () => {
         datePosted: new Date().toLocaleDateString(),
         location: "Random City, Country",
         age: Math.floor(Math.random() * 50) + 18,
+        isOnline: Math.random() > 0.5,
       });
     }
     loading.value = false;
@@ -80,7 +84,26 @@ const handleScroll = () => {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
+.image-container {
+  position: relative;
+}
+
 .item-image {
   object-fit: cover;
+}
+
+.online-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: green;
+  border-radius: 0.2rem;
+  margin-top:0.5rem;
+  color: white;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1px 3px;
 }
 </style>
