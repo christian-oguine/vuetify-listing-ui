@@ -98,7 +98,7 @@ const handleScroll = () => {
   right: 8px;
   background-color: green;
   border-radius: 0.2rem;
-  margin-top:0.5rem;
+  margin-top:1rem;
   color: white;
   font-size: 10px;
   display: flex;
